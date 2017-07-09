@@ -6,15 +6,18 @@ $(document).ready(function() {
     var side3Input = parseInt($("input#side3").val());
 
     if ((side1Input + side2Input <= side3Input) || (side3Input + side2Input <= side1Input) || (side1Input + side3Input <= side2Input)) {
-      // return not a triangle message
+      $(".result").text("Not a triangle!");
+      $("#result").fadeIn();
     } else if (side1Input === side2Input && side1Input === side3Input) {
-      // return equilateral
+      $(".result").text("Equilateral");
+      $("#result").fadeIn();
     } else if ((side1Input === side2Input) || (side1Input === side3Input) || (side3Input === side2Input)) {
-      // return isoseles
+      $(".result").text("Isoseles");
+      $("#result").fadeIn();
     } else if (side1Input != side2Input && side1Input != side3Input && side2Input != side3Input) {
-      // return scalene
+      $(".result").text("Scalene");
+      $("#result").fadeIn();
     }
-
-
+    event.preventDefault();
   });
 });
